@@ -12,6 +12,6 @@ function copyToClipboard(text) {
   
     setTimeout(() => {
       notification.classList.remove('show');
-    }, 2000);
+    }, 2500);
   }
   

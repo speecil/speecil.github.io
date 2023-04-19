@@ -7,7 +7,7 @@
         body {
           margin: 0;
           font-family: 'Teko', sans-serif;
-          background: linear-gradient(to bottom, #252525, #252525);
+          background: #4e4e4e;
           color: #fff;
         }
   
@@ -41,8 +41,9 @@
           align-items: center;
           padding: 20px;
           border-radius: 10px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
           background-color: #fff;
+          border: 8px solid black;
         }
   
         .card:hover {
@@ -85,20 +86,22 @@
         }
 
         #notification {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 20px 30px;
-            font-size: 50px;
-            border-radius: 5px;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
+          position: fixed;
+          top: 0;
+          right: 0;
+          background-color: rgba(0, 0, 0, 0.8);
+          color: #fff;
+          padding: 20px 30px;
+          font-size: 50px;
+          border-radius: 5px;
+          opacity: 0;
+          transform: translateY(-100%);
+          transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
 
         #notification.show {
-            opacity: 1;
+          opacity: 1;
+          transform: translateY(0%);
         }
 
         /* Button styles */
