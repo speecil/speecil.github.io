@@ -2,11 +2,12 @@
 <html>
   <head>
     <title>Twitch Modifiers - Command Info</title>
+    <link href='https://fonts.googleapis.com/css?family=Teko' rel='stylesheet'>
     <script src="commands.js"></script>
     <style>
         body {
           margin: 0;
-          font-family: 'Teko', sans-serif;
+          font-family: 'Teko'; font-size: 16px;
           background: #4e4e4e;
           color: #fff;
         }
@@ -27,6 +28,7 @@
         }
   
         #content {
+
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           grid-gap: 20px;
@@ -56,13 +58,15 @@
         }
   
         .card h2 {
-          font-size: 35px;
+          font-weight: 600;
+          font-size: 42px;
           margin: 0;
           text-align: center;
           color: #0f4c81;
         }
   
         .card p {
+          font-weight: 100;
           font-size: 30px;
           margin: 0;
           text-align: center;
@@ -86,6 +90,8 @@
         }
 
         #notification {
+
+          font-weight: 500;
           position: fixed;
           top: 0;
           right: 0;
