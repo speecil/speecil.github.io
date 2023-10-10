@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Twitch Modifiers - Command Info</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Teko"
+      rel="stylesheet"
+    />
+    <script src="commands.js"></script>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Teko";
+        font-size: 16px;
+        background: #4e4e4e;
+        color: #fff;
+      }
+
+      #header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px;
+        color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      #header a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 20px;
+      }
+
+      #content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+        padding: 20px;
+      }
+
+      .card {
+        display: flex;
+        margin-bottom: 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
+        background-color: #fff;
+        border: 8px solid black;
+      }
+
+      .card:hover {
+        background-color: #f7f7f7;
+        cursor: pointer;
+      }
+
+      .card:hover h2 {
+        text-decoration: wavy;
+      }
+
+      .card h2 {
+        font-weight: 600;
+        font-size: 42px;
+        margin: 0;
+        text-align: center;
+        color: #0f4c81;
+      }
+
+      .card p {
+        font-weight: 100;
+        font-size: 30px;
+        margin: 0;
+        text-align: center;
+        color: #333;
+      }
+
+      .subcommand {
+        font-weight: bold;
+        color: #0f4c81;
+      }
+
+      ul {
+        font-size: 30px;
+        margin-top: 10px;
+        margin-left: 20px;
+        color: #333;
+      }
+
+      li {
+        margin-bottom: 5px;
+      }
+
+      #notification {
+        font-weight: 500;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 20px 30px;
+        font-size: 50px;
+        border-radius: 5px;
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      }
+
+      #notification.show {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+
+      /* Button styles */
+      #command-info-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #0077ff;
+        color: #fff;
+        font-size: 30px;
+        text-align: center;
+        font-family: "Teko", sans-serif;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        text-decoration: none;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+
+      #command-info-btn:hover {
+        background-color: #005eff;
+        cursor: pointer;
+      }
+
+      .headerCool {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .header-text {
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .back-button {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .bottom-box {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        font-size: 30px;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 10px;
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="headerCool">
+      <h1 class="header-text">Twitch Modifiers</h1>
+      <h1 class="header-text">Available Commands</h1>
+      <a href="twitchmodifiers.html"
+        ><button class="back-button" id="command-info-btn">
+          Back to home
+        </button></a
+      >
+    </div>
+    <div id="notification"></div>
+    <div id="content">
+      <div class="card" onclick="copyToClipboard('!tm help')">
+        <h2>!tm help</h2>
+        <p>Sends a link in your chat to this page</p>
+      </div>
+      <div class="card">
+        <h2>!rotate</h2>
+        <p>
+          Changes the spawn rotation of the notes. (As if you were in 360 mode!)
+        </p>
+        <ul>
+          <li onclick="copyToClipboard('!rotate left')">
+            <strong>left</strong> - Rotate notes to the left
+          </li>
+          <li onclick="copyToClipboard('!rotate right')">
+            <strong>right</strong> - Rotate notes to the right
+          </li>
+          <li onclick="copyToClipboard('!rotate home')">
+            <strong>home</strong> - Reset notes rotation to default
+          </li>
+          <li onclick="copyToClipboard('!rotate stop')">
+            <strong>stop</strong> - Stop notes rotation
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>!scale</h2>
+        <p>
+          Changes the scale of the Notes &amp; Bombs with a gradual increment of
+          the size.
+        </p>
+        <ul>
+          <li onclick="copyToClipboard('!scale 0.5')">
+            <strong>0.5</strong> - Set scale to 50%
+          </li>
+          <li onclick="copyToClipboard('!scale 1.0')">
+            <strong>1.0</strong> - Set scale to 100%
+          </li>
+          <li onclick="copyToClipboard('!scale 1.5')">
+            <strong>1.5</strong> - Set scale to 150%
+          </li>
+        </ul>
+      </div>
+      <div class="card" onclick="copyToClipboard('!distract')">
+        <h2>!distract</h2>
+        <p>
+          Changes the notes and note arrows to be a random colour for a couple
+          seconds.
+        </p>
+      </div>
+      <div class="card" onclick="copyToClipboard('!speed')">
+        <h2>!speed</h2>
+        <p>Sets the speed of the song.</p>
+        <ul>
+          <li onclick="copyToClipboard('!speed 0.5')">
+            <strong>0.5</strong> - Set song speed to 50%
+          </li>
+          <li onclick="copyToClipboard('!speed 1.0')">
+            <strong>1.0</strong> - Set song speed to 100%
+          </li>
+          <li onclick="copyToClipboard('!speed 1.2')">
+            <strong>1.5</strong> - Set song speed to 120%
+          </li>
+        </ul>
+      </div>
+      <div class="card" onclick="copyToClipboard('!flip')">
+        <h2>!flipcolour</h2>
+        <p>Flips the colours of the bloqs.</p>
+      </div>
+      <div class="bottom-box">
+        Click on a command/subcommand to copy it to the clipboard
+      </div>
+    </div>
+  </body>
+</html>

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Twitch Modifiers</title>
+    <link href='https://fonts.googleapis.com/css?family=Teko' rel='stylesheet'>
     <style>
       /* Global styles */
       * {
@@ -14,11 +15,11 @@
         margin: 0;
         width: 100%;
         height: 100%;
-        font-family: 'Teko', sans-serif;
-        font-size: 16px;
+        font-family: 'Teko'; font-size: 16px;
         line-height: 1.5;
         color: #333;
-        background: linear-gradient(to bottom, #252525, #252525);
+        font-weight: 100;
+        background: #4e4e4e;
       }
 
       a {
@@ -35,6 +36,7 @@
         padding: 20px;
         text-align: center;
         color: #fff;
+        
       }
 
       #header h1 {
@@ -76,11 +78,13 @@
       }
 
       .creator {
+        font-weight: 100;
         text-align: center;
         margin: 0 20px;
       }
 
       .creator img {
+        font-weight: 100;
         display: block;
         margin: 0 auto 10px;
         width: 150px;
@@ -91,12 +95,14 @@
       }
 
       .creator h3 {
+        font-weight: 100;
         font-size: 24px;
         margin-bottom: 10px;
       }
 
       /* Content styles */
         #content {
+          font-weight: 100;
           height: 100%;
           padding: 20px;
           display: flex;
@@ -106,6 +112,7 @@
         }
 
       .card {
+        font-weight: 100;
         background-color: #fff;
         padding: 20px;
         border-radius: 5px;
@@ -118,9 +125,12 @@
         vertical-align: top;
         text-align: center;
         justify-content: space-evenly;
+        border: 8px solid black;
+        box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
       }
 
       .card h2 {
+        font-weight: 150;
         font-size: 35px;
         margin-bottom: 10px;
         text-align: center;
@@ -139,15 +149,18 @@
       #mod-description {
         text-align: center;
         padding: 20px;
+        font-weight: 100;
       }
 
       #mod-description h2 {
         color: #fff;
         font-size: 28px;
+        font-weight: 100;
         margin-bottom: 10px;
       }
         
       #mod-description p {
+        font-weight: 100;
         color: #fff;
         font-size: 16px;
         margin-bottom: 10px;
@@ -155,9 +168,12 @@
 
       #creatortext {
         text-align: center;
-        padding: 20px;
         font-size: 30px;
         color: #fff;
+      }
+
+      #creatortext h1 {
+        font-weight: 100;
       }
     </style>
   </head>
@@ -166,6 +182,7 @@
       <h1>Twitch Modifiers</h1>
       <div>
         <a href="commands.html"><button id="command-info-btn">Command Info</button></a>
+        <a href="index.html"><button id="command-info-btn">Home</button></a>
       </div>
     </div>
     <div id="mod-description">
@@ -173,18 +190,18 @@
     </div>
 
     <div id="creatortext">
-      <h2>Creators</h2>
+      <h2 class="creatortext">Creators</h2>
     </div>
     <div id="content">
       <div class="card">
-        <img src="Images/Speecil.png" alt="Speecil" />
-        <h2>Speecil</h2>
-        <p>Holy shit its speecil</p>
+        <img src="Images/Speecil.png" alt="Speecil"/>
+        <a href="https://github.com/speecil"><h2>Speecil</h2></a>
+        <p>"i hate zenject" - Truth Speaker (2023)</p>
       </div>
       <div class="card">
-        <img src="Images/Nuggo.png" alt="Nuggo" />
-        <h2>Nuggo</h2>
-        <p>Holy shit its nuggo</p>
+        <img src="Images/Nuggo.png" alt="Nuggo"/>
+        <a href="https://github.com/NuggoDEV"><h2>Nuggo</h2></a>
+        <p>Nuggo is yet to add a description</p>
       </div>
     </div>
   </body>

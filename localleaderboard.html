@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Leaderboard</title>
+  <link rel="icon" type="image/png" href="Images/LocalLeaderboard_logo.png">
+
+  <meta content="LocalLeaderboard" property="og:title" />
+  <meta content="LocalLeaderboard by Speecil - A leaderboard that saves all of your scores within a clean leaderboard" property="og:description" />
+  <meta content="https://speecil.dev/localleaderboard.html" property="og:url" />
+  <meta content="http://speecil.dev/Images/LocalLeaderboard_logo.png" property="og:image" />
+  <meta content="#28b077" data-react-helmet="true" name="theme-color" />
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Open Sans", sans-serif;
+      background: linear-gradient(to right, #02aabd, #00cdac);
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 50px;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+      }
+
+      header img {
+        height: 50px;
+        margin-right: 20px;
+      }
+
+      header h1 {
+        font-size: 40px;
+        font-weight: bold;
+        color: #333333;
+      }
+
+    section {
+      margin-top: 80px;
+      padding: 5% 5% 0;
+      text-align: center;
+      animation: fadein 2s;
+    }
+
+    section h2 {
+      font-size: 50px;
+      color: white;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .description {
+      flex-basis: 100%;
+      max-width: 500px;
+      margin: 20px;
+      font-size: 18px;
+      text-align: left;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .description h3 {
+      font-size: 24px;
+    }
+
+    .description p {
+      font-size: 16px;
+    }
+
+    button {
+      background: #ff512f;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 30px;
+      font-family: "Open Sans", sans-serif;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+    }
+
+    button:hover {
+      background: #dd2476;
+    }
+
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .image-container img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    @media screen and (min-width: 768px) {
+      header h1 {
+        font-size: 36px;
+      }
+
+      section h2 {
+        font-size: 80px;
+      }
+
+      button {
+      background: #ff512f;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 25px;
+      font-family: "Open Sans", sans-serif;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+    }
+
+      .description {
+        flex-basis: calc(50% - 40px);
+      }
+
+      .description h3 {
+        font-size: 28px;
+      }
+
+      .description p {
+        font-size: 18px;
+      }
+    }
+
+
+    @media screen and (min-width: 1024px) {
+      header h1 {
+        font-size: 40px;
+      }
+
+      .description {
+        flex-basis: calc(33.33% - 40px);
+      }
+
+      .description h3 {
+        font-size: 32px;
+      }
+
+      .description p {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" style="text-decoration: none;"><h1>Speecil</h1></a>
+    <a href="https://github.com/speecil"><img src="Images/Speecil.png" alt="Logo"></a>
+  </header>
+  <section>
+    <h2>
+      <img src="./Images/LocalLeaderboard_logo.png" alt="Local Leaderboard Logo" style="height: 120px; margin-right: 10px; vertical-align: middle;">
+      Local Leaderboard
+    </h2>
+    <button onclick="window.open('https://github.com/speecil/LocalLeaderboard-PC/releases/latest', '_blank')">Download</button>
+    <div class="container">
+      <div class="description">
+        <h3>Description</h3>
+        <p>
+          The LocalLeaderboard mod saves your results to a JSON file and displays them in-game. It shows the date, accuracy, score, and modifiers of each play. You can sort by date or high-score in ascending or descending order. If you have the "BeatLeader" mod installed, you can also watch the replay.
+          <br>
+          <br>
+          <b><strong>*By downloading the mod, you agree to the privacy policy, which states how you and your data will be stored</strong></b>
+        </p>
+      </div>
+      <div class="description">
+        <h3>Features</h3>
+        <ul>
+          <li>Saves results from playing a level to a JSON file.</li>
+          <li>Displays results in a custom UI.</li>
+          <li>Shows date, accuracy, score, and modifiers.</li>
+          <li>Allows sorting by date or high score.</li>
+          <li>Ascending or descending order.</li>
+        </ul>
+      </div>
+      <div class="description">
+        <h3>Usage</h3>
+        <p>
+          To use the Local Leaderboard mod, simply install it by unzipping the latest release and finding the <code>LocalLeaderboard.dll</code> file. Drag that file into your Beat Saber installs' <code>Plugin</code> folder. After installing, your results from playing a level will be saved automatically to a JSON file, and you will be able to access the custom UI within the game to view your results.
+        </p>
+      </div>
+      <div class="description">
+        <h3>Support</h3>
+        <p>
+          If you have any issues or questions regarding the Local Leaderboard mod, please message me on Discord (speecil#5350).
+        </p>
+      </div>
+      <div class="description">
+        <h3>License</h3>
+        <p>
+          The Local Leaderboard mod is licensed under a custom license. You can find the license file within the root of the repository.
+        </p>
+      </div>
+      <div class="description">
+        <h3>Credits</h3>
+        <ul>
+          <li><strong>metal_marmott</strong> for fixing many various skill issues.</li>
+          <li><strong>male</strong> for the logo.</li>
+        </ul>
+      </div>
+      <div class="description">
+        <h3>Privacy Policy</h3>
+        <p>
+          The Local Leaderboard mod's privacy policy can be found here: <a href="LLPrivacy.html">Privacy Policy</a>
+          
+        </p>
+        <p>
+          Your "User ID" (User identifier) will be collected in order to check if you have access to "Patron" Features, no other data is collected.
+        </p>
+      </div>
+      <div class="description">
+        <h3>Testers</h3>
+        <ul>
+          <li><strong>metal_marmott</strong></li>
+          <li><strong>June</strong></li>
+          <li><strong>Jess</strong></li>
+          <li><strong>Nuggo</strong></li>
+          <li><strong>Radar</strong></li>
+          <li><strong>Rotech</strong></li>
+          <p>
+            Thank you very much for your help with testing!
+          </p>
+        </ul>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="./Images/LLExample.png" alt="Image 1">
+      <img src="./Images/LLExample2.png" alt="Image 2">
+      <img src="./Images/LLExample3.png" alt="Image 3">
+    </div>
+    <div>
+    </div>
+  </section>
+</body>
+</html>
